@@ -14,6 +14,32 @@
         <module>pyg_sellergoods_interface</module>
         <module>pyg_sellergoods_service</module>
         <module>pyg_manager_web</module>
+        <module>pyg_shop_web</module>
+        <module>pyg_common</module>
+        <module>pyg_content_interface</module>
+        <module>pyg_content_service</module>
+        <module>pyg_portal_web</module>
+        <module>pyg_solr_util</module>
+        <module>pyg_search_interface</module>
+        <module>pyg_search_service</module>
+        <module>pyg_search_web</module>
+        <module>pyg_page_interface</module>
+        <module>pyg_page_service</module>
+        <module>pyg_page_web</module>
+        <module>pyg_user_interface</module>
+        <module>pyg_user_service</module>
+        <module>pyg_user_web</module>
+        <module>pyg_cart_interface</module>
+        <module>pyg_cart_service</module>
+        <module>pyg_cart_web</module>
+        <module>pyg_order_interface</module>
+        <module>pyg_order_service</module>
+        <module>pyg_pay_interface</module>
+        <module>pyg_pay_service</module>
+        <module>pyg_seckill_interface</module>
+        <module>pyg_seckill_service</module>
+        <module>pyg_seckill_web</module>
+        <module>pyg_task_service</module>
     </modules>
 
     <!-- 集中定义依赖版本号 -->
@@ -109,7 +135,7 @@
             <dependency>
                 <groupId>javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.11.0.GA</version>
+                <version>3.18.0-GA</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -259,6 +285,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <!-- Spring -->
         <dependency>
@@ -439,7 +466,20 @@
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
         </dependency>
+        <!--搜索jar包-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-solr</artifactId>
+            <version>1.5.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wxpay</groupId>
+            <artifactId>wxpay-sdk</artifactId>
+            <version>0.0.3</version>
+        </dependency>
     </dependencies>
+
+
     <build>
         <plugins>
             <!-- java编译插件 -->

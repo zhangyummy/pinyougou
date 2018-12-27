@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular</title>
+    <script src="plugins/angularjs/angular.min.js"></script>
+    <script>
+        // 建立模块
+        var app = angular.module("myApp", []);
+        // 创建控制器
+        app.controller("myCtrl余康", function ($scope) {
+            $scope.add = function () {
+                return parseInt($scope.x) + parseInt($scope.y);
+            }
+
+            $scope.add2 = function () {
+                $scope.z = ($scope.x - 0) + ($scope.y - 0);
+            }
+
+            $scope.ccc = "123";
+
+            $scope.list = ["狗叼", "叶翔", "嘻嘻"];
+        });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl余康">
+
+加法<br/>
+<input ng-model="x"/>+
+<input ng-model="y"/>=<br/>
+<input value="{{add()}}" disabled/><br/>
+<button ng-click="add2()">运算</button>
+<input value="{{z}}" disabled/>
+
+<br/>
+<br/>
+<input ng-model="ccc">
+{{ccc}}
+
+<table>
+    <tr ng-repeat="sb in list">
+        <td>{{sb}}</td>
+    </tr>
+</table>
+
+</body>
+</html>

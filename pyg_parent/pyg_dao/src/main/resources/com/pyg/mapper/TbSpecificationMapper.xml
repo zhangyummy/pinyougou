@@ -81,7 +81,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from tb_specification
     where id = #{id,jdbcType=BIGINT}
@@ -97,6 +97,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.pyg.pojo.TbSpecification" >
+     <!--返回主键id-->
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+      select last_insert_id() as id
+    </selectKey>
     insert into tb_specification (id, spec_name)
     values (#{id,jdbcType=BIGINT}, #{specName,jdbcType=VARCHAR})
   </insert>
@@ -161,4 +165,8 @@
     set spec_name = #{specName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectOptionList" resultType="java.util.Map">
+    select id, spec_name as text from tb_specification
+  </select>
 </mapper>
